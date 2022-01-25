@@ -5,6 +5,7 @@ import 'package:speed_test_app/app/data/services/storage/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:speed_test_app/app/modules/home/binding.dart';
 import 'package:speed_test_app/app/modules/home/view.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 main() async {
   await GetStorage.init();
@@ -20,6 +21,9 @@ class Application extends StatelessWidget {
     return GetMaterialApp(
       title: "Speedtest",
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: GoogleFonts.roboto().fontFamily
+      ),
       home: HomePage(),
       initialBinding: HomeBinding(),
       builder: EasyLoading.init(),
