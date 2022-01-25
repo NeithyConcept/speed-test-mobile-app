@@ -24,7 +24,7 @@ class Application extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.roboto().fontFamily
       ),
-      home: HomePage(),
+      home: const HomePage(),
       initialBinding: HomeBinding(),
       builder: EasyLoading.init(),
     );

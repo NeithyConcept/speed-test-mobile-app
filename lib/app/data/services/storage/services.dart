@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:speed_test_app/app/core/utils/keys.dart';
+import 'package:speed_test_app/app/core/values/keys.dart';
 
 class StorageService extends GetxService {
 

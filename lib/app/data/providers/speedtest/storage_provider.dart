@@ -1,10 +1,7 @@
-
-
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:speed_test_app/app/core/utils/keys.dart';
+import 'package:speed_test_app/app/core/values/keys.dart';
 import 'package:speed_test_app/app/data/models/speedtest.dart';
 import 'package:speed_test_app/app/data/services/storage/services.dart';
 
