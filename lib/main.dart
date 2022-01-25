@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:speed_test_app/app/core/utils/scroll_behavior.dart';
 import 'package:speed_test_app/app/data/services/storage/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:speed_test_app/app/modules/home/binding.dart';
@@ -26,7 +27,11 @@ class Application extends StatelessWidget {
       ),
       home: const HomePage(),
       initialBinding: HomeBinding(),
-      builder: EasyLoading.init(),
+      builder: (context, child) {
+        child = EasyLoading.init()(context, child);
+        child = ScrollConfiguration(behavior: MyBehavior(), child: child);
+        return child;
+      },
     );
   }
 }
