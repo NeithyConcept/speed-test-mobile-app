@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:internet_speed_test/callbacks_enum.dart';
 import 'package:internet_speed_test/internet_speed_test.dart';
@@ -7,7 +8,10 @@ import 'package:speed_test_app/app/data/services/storage/repository.dart';
 class HomeController extends GetxController {
 
   SpeedtestRepository speedtestRepository;
-  
+
+  final tabIndex = 1.obs;
+  final tab = <String>["Daily", "Weekly", "Monthly"].obs;
+
   final speedtests = <Speedtest>[].obs;
   final internetSpeedTest = InternetSpeedTest();
 
@@ -50,6 +54,21 @@ class HomeController extends GetxController {
 
   void changeUnitUpload(SpeedUnit unit) {
     unitUpload.value = unit;
+  }
+
+  void changeTabIndex(int index) {
+    tabIndex.value = index;
+  }
+
+  Alignment getTab({int? index}) {
+    switch(index ?? tabIndex.value) {
+      case 0:
+        return Alignment.centerLeft;
+      case 2:
+        return Alignment.centerRight;
+      default:
+        return Alignment.center;
+    }
   }
 
 }
