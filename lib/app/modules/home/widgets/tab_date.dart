@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:speed_test_app/app/core/values/colors.dart';
 import 'package:speed_test_app/app/modules/home/controller.dart';
@@ -18,7 +19,7 @@ class TabDate extends StatelessWidget {
         children: [
           AnimatedAlign(
             alignment: homeController.getTab(),
-            duration: const Duration(milliseconds: 300),
+            duration: const Duration(milliseconds: 200),
             curve: Curves.easeInOut,
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 25),
@@ -40,7 +41,10 @@ class TabDate extends StatelessWidget {
                   alignment: homeController.getTab(index: entry.key),
                   child: GestureDetector(
                     behavior: HitTestBehavior.translucent,
-                    onTap: () => homeController.changeTabIndex(entry.key),
+                    onTap: () {
+                      homeController.changeTabIndex(entry.key);
+                      HapticFeedback.heavyImpact();
+                    },
                     child: Container(
                       width: 88.0.wp/3,
                       padding: const EdgeInsets.symmetric(vertical: 15),
