@@ -63,7 +63,7 @@ class BarGraph extends StatelessWidget {
   Stack _buildColumnToBarGraph({required double percent, String? label, bool selected = false}) {
 
     double value = 0;
-    if(percent >= 0 && percent <= 100) value = (percent/100)*200;
+    if(percent >= 0 && percent <= 100) value = (percent/100)*height;
 
     return Stack(
       children: [

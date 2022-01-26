@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:speed_test_app/app/core/utils/extension.dart';
 import 'package:speed_test_app/app/core/values/colors.dart';
 import 'package:speed_test_app/app/core/values/sizes.dart';
@@ -25,12 +26,15 @@ class TopAppBar extends StatelessWidget {
               child: Stack(
                 children: [
                   IconButton(
-                      onPressed: () {},
-                      enableFeedback: true,
-                      splashRadius: 20,
-                      iconSize: 25,
-                      highlightColor: Colors.transparent,
-                      icon: const Icon(Icons.notifications_outlined, color: primary)
+                    onPressed: () {
+                      HapticFeedback.vibrate();
+                    },
+                    enableFeedback: true,
+                    splashRadius: 25,
+                    iconSize: 25,
+                    highlightColor: Colors.transparent,
+                    splashColor: Colors.grey[400],
+                    icon: const Icon(Icons.notifications_outlined, color: primary)
                   ),
                   Positioned(
                     top: 3.75.wp,

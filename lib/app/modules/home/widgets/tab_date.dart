@@ -43,7 +43,7 @@ class TabDate extends StatelessWidget {
                     behavior: HitTestBehavior.translucent,
                     onTap: () {
                       homeController.changeTabIndex(entry.key);
-                      HapticFeedback.heavyImpact();
+                      HapticFeedback.vibrate();
                     },
                     child: Container(
                       width: 88.0.wp/3,
