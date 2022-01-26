@@ -85,6 +85,7 @@ class HomePage extends GetView<HomeController> {
                         style: TextStyle(fontSize: 22.0.sp, fontWeight: FontWeight.w900)),
                     SizedBox(height: 7.5.wp),
                     BarGraph(
+                      height: 20.0.hp,
                       barSettings: [
                         BarSettings(title: "Mon", percent: 60, label: "4.8 GB"),
                         BarSettings(title: "Tue", percent: 80, label: "7.1 GB"),
@@ -99,6 +100,63 @@ class HomePage extends GetView<HomeController> {
             ],
           ),
         )
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: primary,
+        elevation: 0,
+        enableFeedback: true,
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.white, width: 2),
+            borderRadius: BorderRadius.circular(50)
+          ),
+          child: const Icon(Icons.arrow_upward_rounded)
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          border: Border(top: BorderSide(color: Colors.grey[200]!))
+        ),
+        child: BottomNavigationBar(
+          onTap: (int index) {},
+          elevation: 0,
+          currentIndex: 0,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          enableFeedback: true,
+          unselectedItemColor: primary,
+          selectedItemColor: accent,
+          type: BottomNavigationBarType.fixed,
+          items: const [
+            BottomNavigationBarItem(
+                label: 'home',
+                tooltip: "",
+                icon: Icon(Icons.cottage_outlined)
+            ),
+            BottomNavigationBarItem(
+                label: 'statistics',
+                tooltip: "",
+                icon: Icon(Icons.bar_chart)
+            ),
+            BottomNavigationBarItem(
+                label: '',
+                tooltip: "",
+                icon: Icon(Icons.bar_chart, color: Colors.transparent)
+            ),
+            BottomNavigationBarItem(
+                label: 'history',
+                tooltip: "",
+                icon: Icon(Icons.check_circle_outlined)
+            ),
+            BottomNavigationBarItem(
+                label: 'settings',
+                tooltip: "",
+                icon: Icon(Icons.settings_outlined)
+            )
+          ],
+        ),
       ),
     );
   }
