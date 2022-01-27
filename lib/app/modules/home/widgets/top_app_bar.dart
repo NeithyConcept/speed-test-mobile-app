@@ -6,8 +6,9 @@ class TopAppBar extends StatelessWidget {
 
   final String title;
   final Widget? icon;
+  final bool? divider;
 
-  const TopAppBar({Key? key, required this.title, required this.icon}) : super(key: key);
+  const TopAppBar({Key? key, required this.title, required this.icon, this.divider = true}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +27,10 @@ class TopAppBar extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(
+        divider == true ? SizedBox(
             height: 13.0.wp,
             child: Divider(color: Colors.grey[200], thickness: 1)
-        ),
+        ) : SizedBox(height: 5.0.wp),
       ],
     );
   }
