@@ -20,7 +20,6 @@ class HomePage extends GetView<HomeController> {
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
-            physics: const ClampingScrollPhysics(),
             child: Column(
               children: [
                 TopAppBar(
