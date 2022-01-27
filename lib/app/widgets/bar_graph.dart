@@ -38,22 +38,22 @@ class BarGraph extends StatelessWidget {
           rowSizes: [height.px],
           columnGap: columnGap ?? 3.0.wp,
           children: barSettings.map((e) =>
-            _buildColumnToBarGraph(percent: e.percent, label: e.label, selected: e.selected),
+              _buildColumnToBarGraph(percent: e.percent, label: e.label, selected: e.selected),
           ).toList(),
         ),
         SizedBox(height: 5.0.wp),
         LayoutGrid(
           columnSizes: columnSizesDefault,
-          rowSizes: [height.px],
+          rowSizes: [35.px],
           columnGap: columnGap ?? 3.0.wp,
           children: barSettings.map((e) =>
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(e.title, style: TextStyle(fontSize: 10.0.sp, color: Colors.grey[400]),
-                    textAlign: TextAlign.center),
-              ],
-            )
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(e.title, style: TextStyle(fontSize: 10.0.sp, color: Colors.grey[400]),
+                      textAlign: TextAlign.center),
+                ],
+              )
           ).toList(),
         )
       ],
