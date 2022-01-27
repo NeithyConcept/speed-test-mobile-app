@@ -6,8 +6,8 @@ import 'package:get_storage/get_storage.dart';
 import 'package:speed_test_app/app/core/utils/scroll_behavior.dart';
 import 'package:speed_test_app/app/data/services/storage/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:speed_test_app/app/modules/home/global/binding.dart';
-import 'package:speed_test_app/app/modules/home/global/view.dart';
+import 'package:speed_test_app/app/modules/global/binding.dart';
+import 'package:speed_test_app/app/modules/global/view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Environment {

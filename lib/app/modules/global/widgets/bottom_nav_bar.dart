@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:speed_test_app/app/core/values/colors.dart';
-import 'package:speed_test_app/app/modules/home/global/controller.dart';
+import 'package:speed_test_app/app/modules/global/controller.dart';
 
 class BottomNavBar extends StatelessWidget {
 
