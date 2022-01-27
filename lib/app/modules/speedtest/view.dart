@@ -61,7 +61,6 @@ class SpeedtestPage extends GetView<SpeedtestController> {
               ),
               SizedBox(height: 5.0.wp),
               BuildGauge(),
-              SizedBox(height: 5.0.wp),
               Obx(() => Padding(
                   padding: container,
                   child: controller.isStarted.value ?
