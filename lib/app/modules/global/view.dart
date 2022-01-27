@@ -5,6 +5,8 @@ import 'package:speed_test_app/app/modules/global/controller.dart';
 import 'package:speed_test_app/app/modules/global/widgets/bottom_nav_bar.dart';
 import 'package:speed_test_app/app/modules/home/view.dart';
 import 'package:speed_test_app/app/modules/settings/view.dart';
+import 'package:speed_test_app/app/modules/speedtest/binding.dart';
+import 'package:speed_test_app/app/modules/speedtest/view.dart';
 
 class GlobalPage extends GetView<GlobalController> {
 
@@ -24,7 +26,7 @@ class GlobalPage extends GetView<GlobalController> {
         ],
       )),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => Get.to(SpeedtestPage(), binding: SpeedtestBinding(),transition: Transition.downToUp),
         backgroundColor: primary,
         elevation: 0,
         enableFeedback: true,
