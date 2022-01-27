@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:speed_test_app/app/core/values/colors.dart';
 import 'package:speed_test_app/app/core/values/sizes.dart';
-import 'package:speed_test_app/app/modules/home/global/controller.dart';
+import 'package:speed_test_app/app/modules/global/controller.dart';
 import 'package:speed_test_app/app/modules/home/widgets/top_app_bar.dart';
 import 'package:speed_test_app/app/modules/settings/controller.dart';
 import 'package:speed_test_app/app/core/utils/extension.dart';
@@ -91,13 +91,46 @@ class SettingsPage extends GetView<SettingsController> {
                     children: [Text("Global Settings",
                         style: TextStyle(fontSize: 22.0.sp, fontWeight: FontWeight.w900)),],
                   ),
-                  SizedBox(height: 7.5.wp),
+
+                ],
+              ),
+            ),
+            SizedBox(height: 7.5.wp),
+            Padding(
+              padding: container,
+              child: Wrap(
+                alignment: WrapAlignment.spaceBetween,
+                runSpacing: 8.0.wp,
+                children: [
+                  buildRowGlobalSettings("Time", "24-hour"),
+                  buildRowGlobalSettings("Date", "MM/DD/YYYY"),
+                  buildRowGlobalSettings("Distance", "Miles"),
+                  buildRowGlobalSettings("Speed", "Mbps"),
                 ],
               ),
             )
           ],
         )
       ),
+    );
+  }
+
+  Row buildRowGlobalSettings(String title, String placeholder) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(title,
+          style: TextStyle(fontSize: 16.0.sp, fontWeight: FontWeight.w900)),
+        Wrap(
+          crossAxisAlignment: WrapCrossAlignment.center,
+          spacing: 5.0.wp,
+          children: [
+            Text(placeholder,
+                style: TextStyle(fontSize: 12.0.sp, color: Colors.grey)),
+            Icon(Icons.east_outlined, size: 18.0.sp)
+          ],
+        )
+      ],
     );
   }
 
