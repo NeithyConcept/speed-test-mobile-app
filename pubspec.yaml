@@ -12,6 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  flutter_dotenv: ^5.0.2
   get: ^4.6.1
   get_storage: ^2.0.3
   flutter_easyloading: ^3.0.3
@@ -20,6 +21,7 @@ dependencies:
   internet_speed_test: ^1.5.0
   google_fonts: ^2.2.0
   flutter_layout_grid: ^1.0.3
+  dart_ipify: ^1.1.1
 
 dev_dependencies:
   flutter_test:
@@ -30,6 +32,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - .env.development
+    - .env.production
 
 flutter_icons:
   android: "launcher_icon"
