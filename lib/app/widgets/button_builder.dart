@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class ButtonBuilder extends StatelessWidget {
 
-  final String text;
+  final String? text;
   final BorderRadiusGeometry? borderRadius;
   final BorderSide? border;
   final double? width;
@@ -41,9 +41,9 @@ class ButtonBuilder extends StatelessWidget {
           crossAxisAlignment: WrapCrossAlignment.center,
           spacing: 15,
           children: [
-            Text(text,
+            if(text != null) Text(text!,
                 textAlign: TextAlign.center,
-                style: style ?? const TextStyle(fontSize: 18, fontWeight: FontWeight.w700)
+                style: style ?? const TextStyle(fontSize: 20, fontWeight: FontWeight.w300)
             ),
             if(icon != null) Icon(icon, size: 22),
           ],
@@ -54,7 +54,7 @@ class ButtonBuilder extends StatelessWidget {
         primary: color ?? Colors.white,
         side: border,
         shape: RoundedRectangleBorder(
-          borderRadius: borderRadius ?? BorderRadius.circular(16),
+          borderRadius: borderRadius ?? BorderRadius.circular(50),
         )
       ),
     );

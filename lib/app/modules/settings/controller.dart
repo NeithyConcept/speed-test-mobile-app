@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 class Location {
   late final latitude = 0.0.obs;
   late final longitude = 0.0.obs;
+  late final city = "".obs;
 }
 
 class SettingsController extends GetxController {
@@ -27,6 +28,7 @@ class SettingsController extends GetxController {
       nameServer.value = value.as?.name ?? "undefined";
       location.longitude.value = value.location?.lng ?? 0;
       location.latitude.value = value.location?.lat ?? 0;
+      location.city.value = value.location?.city ?? "Somewhere";
     });
   }
 
@@ -38,12 +40,16 @@ class SettingsController extends GetxController {
     return nameServer.value;
   }
 
-  double? getLocationLatitude() {
+  double getLocationLatitude() {
     return location.latitude.value;
   }
 
-  double? getLocationLongitude() {
+  double getLocationLongitude() {
     return location.longitude.value;
+  }
+
+  String getLocationCity() {
+    return location.city.value;
   }
 
 }
